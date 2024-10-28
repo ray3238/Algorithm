@@ -25,7 +25,7 @@ int main() {
     for (int i = 0; i < m; i++) {
         cin >> findnum;
 
-        bool isFound = binary_search(listv.begin(), listv.end(), findnum);    // binary search를 사용할 때는 먼저 오름차순, 내림차순 정렬을 해줘야 함.
+        bool isFound = binary_search(listv.begin(), listv.end(), findnum);
         cout << isFound << "\n";
     }
     return 0;
