@@ -1,24 +1,32 @@
 #include <iostream>
-#include <unordered_set>
-
+#include <algorithm>
+#include <vector>
 using namespace std;
 
 int main() {
+    ios_base::sync_with_stdio(false);
     cin.tie(0);
-    ios_base::sync_with_stdio(0);
-    unordered_set <int> set;
-    
-    int n, n2;
-    cin >> n;
-    for (int i = 0; i < n; i++) {
-        cin >> n2;
-        set.emplace(n2);
-    }
+
+    int n, m;
+    long long listnum, findnum;
+    vector<int> listv;
 
     cin >> n;
+
     for (int i = 0; i < n; i++) {
-        cin >> n2;
-        cout << set.count(n2) << '\n';
+        cin >> listnum;
+        listv.push_back(listnum);
+    }
+
+    sort(listv.begin(), listv.end());
+
+    cin >> m;
+
+    for (int i = 0; i < m; i++) {
+        cin >> findnum;
+
+        bool isFound = binary_search(listv.begin(), listv.end(), findnum);    // binary search를 사용할 때는 먼저 오름차순, 내림차순 정렬을 해줘야 함.
+        cout << isFound << "\n";
     }
     return 0;
 }
