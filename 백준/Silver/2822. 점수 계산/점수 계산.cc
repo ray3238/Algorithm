@@ -24,10 +24,9 @@ int main() {
     sort(vec.begin(), vec.end());
 
     for (int i = 7; i > 2; i--) {
-        if(find(result.begin(), result.end(), vec[i]) != result.end()) { // vector내에 6이 존재함
+        if(find(result.begin(), result.end(), vec[i]) != result.end()) {
             sum += result[find(result.begin(), result.end(), vec[i]) - result.begin()];
             result2.push_back(find(result.begin(), result.end(), vec[i]) - result.begin() + 1);
-            //cout << find(result.begin(), result.end(), vec[i]) - result.begin() + 1 << " ";  index 확인
         }
     }
 
